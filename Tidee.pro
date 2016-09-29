@@ -2,7 +2,7 @@ QT += core
 
 CONFIG += c++11
 
-TARGET = TeeDee
+TARGET = Tidee
 CONFIG += console
 CONFIG -= app_bundle
 
