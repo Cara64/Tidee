@@ -9,7 +9,8 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += $$PWD/main.cpp \
-    QtdProcessingTools.cpp
+    QtdProcessingTools.cpp \
+    QtdScanDocument.cpp
 
 
 INCLUDEPATH += D:\\opencv\\build\\include \
@@ -20,6 +21,7 @@ LIBS += -LD:\\opencv\\build\\x64\\vc14\\lib \
             -lopencv_world310d
 
 HEADERS += \
-    QtdProcessingTools.h
+    QtdProcessingTools.h \
+    QtdScanDocument.h
 
 

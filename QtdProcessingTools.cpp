@@ -14,7 +14,7 @@ QtdProcessingTools::~QtdProcessingTools()
 }
 
 
-cv::Mat QtdProcessingTools::fourPointTransform(cv::Mat image, cv::Mat points)
+cv::Mat QtdProcessingTools::fourPointTransform(cv::Mat &image, cv::Mat &points)
 {
     qDebug() << "Four points transform processing \n";
 
@@ -70,7 +70,7 @@ cv::Mat QtdProcessingTools::fourPointTransform(cv::Mat image, cv::Mat points)
 }
 
 
-cv::Mat QtdProcessingTools::resize(cv::Mat image, int width, int height, cv::InterpolationFlags inter)
+cv::Mat QtdProcessingTools::resize(cv::Mat &image, int width, int height, cv::InterpolationFlags inter)
 {
     double ratio;
     cv::Mat result;
@@ -91,7 +91,21 @@ cv::Mat QtdProcessingTools::resize(cv::Mat image, int width, int height, cv::Int
 }
 
 
-cv::Mat QtdProcessingTools::orderPoints(cv::Mat points)
+QImage QtdProcessingTools::convert(cv::Mat image)
+{
+    /*!< TODO */
+    return QImage();
+}
+
+
+cv::Mat QtdProcessingTools::convert(QImage image)
+{
+    /*!< TODO */
+    return cv::Mat();
+}
+
+
+cv::Mat QtdProcessingTools::orderPoints(cv::Mat &points)
 {
     qDebug() << "Ordering Points Processing \n";
 

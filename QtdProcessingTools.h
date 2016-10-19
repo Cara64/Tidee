@@ -5,6 +5,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <QImage>
 
 
 /*!
@@ -32,7 +33,7 @@ public:
      * \param points Points matrix of object to transform
      * \return Matrix with the transformed image
      */
-    static cv::Mat fourPointTransform(cv::Mat image, cv::Mat points);
+    static cv::Mat fourPointTransform(cv::Mat &image, cv::Mat &points);
 
     /*!
      * \brief Resize an image matrix
@@ -42,7 +43,21 @@ public:
      * \param inter Interpolation flag
      * \return Matrix with the resized image
      */
-    static cv::Mat resize(cv::Mat image, int width = 0, int height = 0, cv::InterpolationFlags inter = cv::INTER_AREA);
+    static cv::Mat resize(cv::Mat &image, int width = 0, int height = 0, cv::InterpolationFlags inter = cv::INTER_AREA);
+
+    /*!
+     * \brief Convert from OpenCV Matrix to QImage
+     * \param image OpenCV Matrix
+     * \return QImage
+     */
+    static QImage convert(cv::Mat image);
+
+    /*!
+     * \brief Convert from QImage to OpenCV Matrix
+     * \param image QImage
+     * \return OpenCV Matrix
+     */
+    static cv::Mat convert(QImage image);
 
 private:
     /*!
@@ -50,7 +65,7 @@ private:
      * \param points Points Matrix to order
      * \return Matrix with ordered points
      */
-    static cv::Mat orderPoints(cv::Mat points);
+    static cv::Mat orderPoints(cv::Mat &points);
 
 };
 
